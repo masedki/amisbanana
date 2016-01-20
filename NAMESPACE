@@ -1,0 +1,7 @@
+exportPattern("^[[:alpha:]]+")
+useDynLib(amisbanana)
+importFrom(Rcpp, evalCpp)
+importFrom("mnormt", rmt)
+import(methods)
+export(amisbanana)
+exportClasses("amispop", "amisparameter", "amisstrategy", "amiscriteria")

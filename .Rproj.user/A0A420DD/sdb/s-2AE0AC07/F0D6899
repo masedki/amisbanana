@@ -1,0 +1,17 @@
+{
+    "contents" : "exportPattern(\"^[[:alpha:]]+\")\nuseDynLib(amisbanana)\nimportFrom(Rcpp, evalCpp)\nimportFrom(\"mnormt\", rmt)\nimport(methods)\nexport(amisbanana)\nexportClasses(\"amispop\", \"amisparameter\", \"amisstrategy\", \"amiscriteria\")\n",
+    "created" : 1453296484018.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2069670188",
+    "id" : "F0D6899",
+    "lastKnownWriteTime" : 1453302633,
+    "path" : "~/recherche/amisbanana/pkg/amisbanana/NAMESPACE",
+    "project_path" : "NAMESPACE",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_namespace"
+}

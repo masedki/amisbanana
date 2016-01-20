@@ -1,0 +1,218 @@
+[
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/inst/include/Data.h",
+                "kind" : 2,
+                "line" : 13,
+                "name" : "Data",
+                "parent_name" : "",
+                "usr" : "c:@C@Data"
+            }
+        ],
+        "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/inst/include/Data.h",
+        "file_last_write" : 1453282903
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/inst/include/Param.h",
+                "kind" : 2,
+                "line" : 17,
+                "name" : "Param",
+                "parent_name" : "",
+                "usr" : "c:@C@Param"
+            }
+        ],
+        "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/inst/include/Param.h",
+        "file_last_write" : 1453282903
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/inst/include/XEM.h",
+                "kind" : 2,
+                "line" : 15,
+                "name" : "XEM",
+                "parent_name" : "",
+                "usr" : "c:@C@XEM"
+            }
+        ],
+        "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/inst/include/XEM.h",
+        "file_last_write" : 1453282903
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/Data.cpp",
+        "file_last_write" : 1453282903
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/Param.cpp",
+        "file_last_write" : 1453282903
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 13,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "ldtmvt(const mat &, const Col<double> &, const mat &, const int &)",
+                "parent_name" : "",
+                "usr" : "c:@F@ldtmvt#&1$@N@arma@C@Mat>#d#&1$@N@arma@C@Col>#d#S0_#&1I#"
+            },
+            {
+                "column" : 10,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 7,
+                "line" : 47,
+                "name" : "FiltreDegenere",
+                "parent_name" : "XEM",
+                "usr" : "c:@C@XEM@F@FiltreDegenere#"
+            },
+            {
+                "column" : 11,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 7,
+                "line" : 67,
+                "name" : "ComputeTmpLogProba",
+                "parent_name" : "XEM",
+                "usr" : "c:@C@XEM@F@ComputeTmpLogProba#"
+            },
+            {
+                "column" : 11,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 7,
+                "line" : 74,
+                "name" : "ComputeTmpU",
+                "parent_name" : "XEM",
+                "usr" : "c:@C@XEM@F@ComputeTmpU#"
+            },
+            {
+                "column" : 13,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 7,
+                "line" : 97,
+                "name" : "ComputeLogLik",
+                "parent_name" : "XEM",
+                "usr" : "c:@C@XEM@F@ComputeLogLik#"
+            },
+            {
+                "column" : 11,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 7,
+                "line" : 114,
+                "name" : "Estep",
+                "parent_name" : "XEM",
+                "usr" : "c:@C@XEM@F@Estep#"
+            },
+            {
+                "column" : 11,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 7,
+                "line" : 118,
+                "name" : "OneEM",
+                "parent_name" : "XEM",
+                "usr" : "c:@C@XEM@F@OneEM#"
+            },
+            {
+                "column" : 11,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 7,
+                "line" : 130,
+                "name" : "Mstep",
+                "parent_name" : "XEM",
+                "usr" : "c:@C@XEM@F@Mstep#"
+            },
+            {
+                "column" : 11,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 7,
+                "line" : 148,
+                "name" : "SwitchParamCurrent(int)",
+                "parent_name" : "XEM",
+                "usr" : "c:@C@XEM@F@SwitchParamCurrent#I#"
+            },
+            {
+                "column" : 11,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 7,
+                "line" : 150,
+                "name" : "Run",
+                "parent_name" : "XEM",
+                "usr" : "c:@C@XEM@F@Run#"
+            },
+            {
+                "column" : 11,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 7,
+                "line" : 188,
+                "name" : "Output(S4 *)",
+                "parent_name" : "XEM",
+                "usr" : "c:@C@XEM@F@Output#*$@N@Rcpp@C@S4_Impl>#@N@Rcpp@CT>1#T@PreserveStorage#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 6,
+                "line" : 206,
+                "name" : "runXEM(S4)",
+                "parent_name" : "",
+                "usr" : "c:@F@runXEM#$@N@Rcpp@C@S4_Impl>#@N@Rcpp@CT>1#T@PreserveStorage#"
+            },
+            {
+                "column" : 19,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 6,
+                "line" : 216,
+                "name" : "rbanana(const int, const int, const double)",
+                "parent_name" : "",
+                "usr" : "c:@F@rbanana#1I#1I#1d#"
+            },
+            {
+                "column" : 19,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 6,
+                "line" : 227,
+                "name" : "dbanana(arma::Mat<double> &, const double &)",
+                "parent_name" : "",
+                "usr" : "c:@F@dbanana#&$@N@arma@C@Mat>#d#&1d#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 6,
+                "line" : 237,
+                "name" : "computedensities(S4, const double)",
+                "parent_name" : "",
+                "usr" : "c:@F@computedensities#$@N@Rcpp@C@S4_Impl>#@N@Rcpp@CT>1#T@PreserveStorage#1d#"
+            },
+            {
+                "column" : 6,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 6,
+                "line" : 257,
+                "name" : "computedmixture(S4, S4, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@computedmixture#$@N@Rcpp@C@S4_Impl>#@N@Rcpp@CT>1#T@PreserveStorage#S0_#I#"
+            },
+            {
+                "column" : 19,
+                "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+                "kind" : 6,
+                "line" : 274,
+                "name" : "dlogistic(arma::Mat<double> &, arma::Col<double> &)",
+                "parent_name" : "",
+                "usr" : "c:@F@dlogistic#&$@N@arma@C@Mat>#d#&$@N@arma@C@Col>#d#"
+            }
+        ],
+        "file" : "/home/sedki/recherche/amisbanana/pkg/amisbanana/src/XEM.cpp",
+        "file_last_write" : 1453283529
+    }
+]

@@ -1,0 +1,16 @@
+Package: amisbanana
+Type: Package
+Title: Adaptive Multiple Importance Sampling for banana shape target
+Version: 0.1
+Date: 2016-01-20
+Depends: mnormt
+Author: Mohammed Amechtoh Sedki
+Maintainer: Mohammed Amechtoh Sedki <masedki@gmail.com>
+Description: This package provides Adaptive Multiple Importance Sampling schemes
+License: GPL-2
+LazyData: TRUE
+Imports: Rcpp (>= 0.12.2), mnormt, methods
+LinkingTo:  Rcpp, RcppArmadillo
+NeedsCompilation: yes
+
+

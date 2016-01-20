@@ -1,0 +1,17 @@
+{
+    "contents" : "amisbanana <- function(nsec=seq(4000, 13000, len=10), update=FALSE,b=0.03, g=6, nu=3, d=2, n0=3000,s=c(1.73*14.14/pi, 17.3/pi, rep(1.73/pi, (d-2))))\n{\n  if(update)\n  {\n    s4vec <- lapply( rep(\"amisparameter\", length(nsec)), new)\n    poptmp <- initsample(new(\"amispop\"), n=n0, s=s,b=b)\n    strategy <- amisstrategy(nu=nu,g=g)\n    param <- new(\"amisparameter\")\n    xem <- new(\"amisXEM\", pop=poptmp, criteria=new(\"amiscriteria\"), strategy=strategy, param=param)\n    runXEM(xem)\n    system <- generatesystem(xem, nsec[1],b)\n    s4vec[1] <-xem@param\n    pop <-system@pop\n    computedmixture(pop, s4vec[[1]], nsec[1])\n    pop@w <- as.vector(pop@numera/pop@denom)\n    for(t in 2:length(nsec))\n    {\n      poptmp <- samplefrom(pop)\n      xem <- new(\"amisXEM\", pop=poptmp, criteria=new(\"amiscriteria\"), strategy=strategy, param=new(\"amisparameter\"))\n      runXEM(xem)\n      system <- generatesystem(xem, nsec[t],b)\n      s4vec[t] <-xem@param\n      pop@x<- rbind(pop@x, system@pop@x)\n      pop@numera <- c(pop@numera, system@pop@numera)\n      pop@denom <- rep(0, sum(nsec[1:t]))\n      pop@n <- sum(nsec[1:t])\n      for(h in 1:t)\n        computedmixture(pop, s4vec[[h]], nsec[h])\n      pop@w <- as.vector(pop@numera/pop@denom)\n    }\n    return(list(pop=pop, param=s4vec))\n  }\n  else\n  {\n    s4vec <- lapply( rep(\"amissystem\", length(nsec)), new)\n    pop <- initsample(new(\"amispop\"), n=n0, s=s,b=b)\n    strategy <- amisstrategy(nu=nu,g=g)\n    xem <- new(\"amisXEM\", pop=pop, criteria=new(\"amiscriteria\"), strategy=strategy, param=new(\"amisparameter\"))\n    runXEM(xem)\n\n    for(t in 1:length(nsec))\n    {\n      system <- generatesystem(xem, nsec[t],b)\n      computedensities(system, b)\n      s4vec[t] <- system\n      if(t < length(nsec))\n      {\n        pop <- samplefrom(system@pop)\n        xem <- new(\"amisXEM\", pop=pop, criteria=new(\"amiscriteria\"), strategy=strategy, param=new(\"amisparameter\"))\n        runXEM(xem)\n      }\n    }\n\n    return(s4vec)\n  }\n}\n",
+    "created" : 1453301183546.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4048132859",
+    "id" : "77BE506C",
+    "lastKnownWriteTime" : 1453301204,
+    "path" : "~/recherche/amisbanana/pkg/amisbanana/R/amisbanana.R",
+    "project_path" : "R/amisbanana.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
