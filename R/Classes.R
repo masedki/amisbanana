@@ -29,29 +29,31 @@ return(new("amispop", x=x, w=rep(1, nrow(x)), d=ncol(x), n=nrow(x)))
 
 
 setGeneric(name= "samplefrom",  def = function(obj){ standardGeneric("samplefrom")})
-setMethod(f = "samplefrom", 
-           signature(obj="amispop"), 
+setMethod(f = "samplefrom",
+           signature(obj="amispop"),
            definition = function(obj){
-             idx = sample.int(obj@n, size = obj@n, prob = as.vector(obj@w) , rep=TRUE)
-             obj1 <- new("amispop", x=matrix(0,0,0), w=rep(1,obj@n), denom=as.vector(obj@denom), numera=as.vector(obj@numera), d=ncol(obj@x), n=nrow(obj@x)) 
+             #idx = sample.int(obj@n, size = obj@n, prob = as.vector(obj@w) , rep=TRUE)
+             #obj1 <- new("amispop", x=matrix(0,0,0), w=rep(1,obj@n), denom=as.vector(obj@denom), numera=as.vector(obj@numera), d=ncol(obj@x), n=nrow(obj@x))
+             idx = sample.int(obj@n, size = 50000, prob = as.vector(obj@w) , rep=TRUE)
+             obj1 <- new("amispop", x=matrix(0,0,0), w=rep(1,50000), denom=as.vector(obj@denom), numera=as.vector(obj@numera), d=ncol(obj@x), n=50000)
              obj1@x <- obj@x[idx,]
-             return(obj1)         
+             return(obj1)
            })
 
 setGeneric(name= "initsample",  def = function(obj, n, s, b){ standardGeneric("initsample")})
-setMethod(f = "initsample", signature(obj="amispop", n="numeric", s="numeric", b="numeric"), 
+setMethod(f = "initsample", signature(obj="amispop", n="numeric", s="numeric", b="numeric"),
             definition = function(obj, n, s, b){
             obj@x <- matrix(NA, n, length(s))
             obj@d <- ncol(obj@x)
             obj@n <- nrow(obj@x)
             for(j in 1:obj@d)
               obj@x[,j] <- rlogis(n, loc = 0, scale = s[j])
-            
+
             obj@numera  <- as.vector(dbanana(obj@x, b))
             obj@denom <- as.vector(dlogistic(obj@x, s))
             obj@w <- obj@numera/obj@denom
             obj@w <- obj@w/sum(obj@w)
-            return(obj)         
+            return(obj)
           })
 
 
@@ -59,13 +61,13 @@ setMethod(f = "initsample", signature(obj="amispop", n="numeric", s="numeric", b
 ## !!!!!!!!!!!!!!!! Classe S4 amisstrategy provisoire, à remvoir si transformation en package !!!!!!!!!!!!!!!!!!!!!!!!!!
 ########################################################################################################################
 setClass(
-  Class = "amisstrategy", 
-  representation = representation(nu="numeric", g="numeric", nbSmall="numeric", iterSmall="numeric", nbKeep="numeric", iterKeep="numeric", tolKeep="numeric"), 
+  Class = "amisstrategy",
+  representation = representation(nu="numeric", g="numeric", nbSmall="numeric", iterSmall="numeric", nbKeep="numeric", iterKeep="numeric", tolKeep="numeric"),
   prototype = prototype(nu=numeric(),g=numeric(), nbSmall=numeric(), iterSmall=numeric(), nbKeep=numeric(), iterKeep=numeric(), tolKeep=numeric())
-) 
+)
 
 ## Constructeur de la classe S4 amisstrategy
-amisstrategy <- function(nu=3,g=6, nbSmall=250, iterSmall=50, nbKeep=25, iterKeep=10**3, tolKeep=10**(-3)){
+amisstrategy <- function(nu=3,g=6, nbSmall=150, iterSmall=50, nbKeep=25, iterKeep=10**3, tolKeep=10**(-3)){
   if( nbKeep > nbSmall)
     nbKeep <- nbSmall
   new("amisstrategy",nu=nu,g=g,nbSmall=nbSmall, iterSmall=iterSmall, nbKeep=nbKeep,iterKeep=iterKeep, tolKeep=tolKeep)
@@ -99,8 +101,8 @@ amiscriteria <- setClass(
 ## Classe S4 amisXEM qui contient tout le reste
 ########################################################################################################################
 setClass(
-  Class = "amisXEM", 
-  representation = representation(pop="amispop", criteria="amiscriteria", strategy="amisstrategy", param="amisparameter"), 
+  Class = "amisXEM",
+  representation = representation(pop="amispop", criteria="amiscriteria", strategy="amisstrategy", param="amisparameter"),
   prototype = prototype(pop=new("amispop"), criteria=new("amiscriteria"), strategy=new("amisstrategy"), param=new("amisparameter"))
 )
 
@@ -108,13 +110,13 @@ setClass(
 ## Classe S4 amisSystem qui contient tout le reste
 ########################################################################################################################
 setClass(
-  Class = "amissystem", 
-  representation = representation(pop="amispop", param="amisparameter"), 
+  Class = "amissystem",
+  representation = representation(pop="amispop", param="amisparameter"),
   prototype = prototype(pop=new("amispop"), param=new("amisparameter"))
 )
 
 generatesystem <- function(obj,n,b)
-{ 
+{
   x<-matrix(NA, n, nrow(obj@param@mu))
   idx <- sample(obj@strategy@g, size=n,prob = obj@param@pi, rep=TRUE)
   for(k in 1:obj@strategy@g)

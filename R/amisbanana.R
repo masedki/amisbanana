@@ -3,8 +3,18 @@ amisbanana <- function(nsec=seq(4000, 13000, len=10), update=FALSE,b=0.03, g=6, 
   if(update)
   {
     s4vec <- lapply( rep("amisparameter", length(nsec)), new)
-    poptmp <- initsample(new("amispop"), n=n0, s=s,b=b)
     strategy <- amisstrategy(nu=nu,g=g)
+    if(d>2)
+    {
+      pop <- initsample(new("amispop"), n=100000, s=s,b=b)
+      #strategy <- amisstrategy(nu=nu,g=g, nbSmall=500)
+    }
+    else
+    {
+      pop <- initsample(new("amispop"), n=n0, s=s,b=b)
+      #strategy <- amisstrategy(nu=nu,g=g)
+    }
+    poptmp <- samplefrom(pop)
     param <- new("amisparameter")
     xem <- new("amisXEM", pop=poptmp, criteria=new("amiscriteria"), strategy=strategy, param=param)
     runXEM(xem)
